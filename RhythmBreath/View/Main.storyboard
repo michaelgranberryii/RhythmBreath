@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cMc-2w-8kB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rhythm Breath-->
+        <scene sceneID="W6K-nC-omU">
+            <objects>
+                <tableViewController id="zuO-Kz-9RK" customClass="MainTableViewController" customModule="RhythmBreath" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oRL-Tf-lXY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="zuO-Kz-9RK" id="fAJ-Hl-TaV"/>
+                            <outlet property="delegate" destination="zuO-Kz-9RK" id="cGX-CQ-H5g"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Rhythm Breath" id="Dyj-XE-yta">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="RiV-O3-bs2">
+                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="cch-Ys-MF6" kind="show" id="HLb-zC-ehQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="EjY-bf-EpT" kind="show" identifier="toViewController" id="NTe-yg-5Tl"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rN2-F9-9sq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917" y="98"/>
+        </scene>
+        <!--Breathing Controller-->
+        <scene sceneID="r4H-Xo-Pcn">
+            <objects>
+                <viewController id="EjY-bf-EpT" customClass="BreathingController" customModule="RhythmBreath" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="35b-dW-a9C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnq-Ya-ERX">
+                                <rect key="frame" x="186.5" y="118" width="41.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KMf-4X-nXS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eOs-3t-Qgo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wnq-Ya-ERX" firstAttribute="top" secondItem="eOs-3t-Qgo" secondAttribute="top" constant="30" id="ENL-1q-vWd"/>
+                            <constraint firstItem="wnq-Ya-ERX" firstAttribute="centerX" secondItem="35b-dW-a9C" secondAttribute="centerX" id="PLU-eu-IRl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rg1-p0-LTE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="slider.horizontal.3" catalog="system" id="Li5-rN-Xgx">
+                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="ta8-Tp-pyD" kind="show" id="oPJ-12-EEd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="breathingLabel" destination="wnq-Ya-ERX" id="vft-mX-fJM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgp-6m-BdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921.7391304347827" y="97.767857142857139"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="hVs-v7-OAz">
+            <objects>
+                <tableViewController id="ta8-Tp-pyD" customClass="SettingsViewController" customModule="RhythmBreath" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="J6T-4a-eem">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="h4u-Gt-F5V">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h4u-Gt-F5V" id="uY8-d4-yEW">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ta8-Tp-pyD" id="Wfu-v1-Ktl"/>
+                            <outlet property="delegate" destination="ta8-Tp-pyD" id="fSA-3J-6Qd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="3Ny-4d-PE6"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNV-9H-RNY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3128" y="216"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="DSV-lo-hsR">
+            <objects>
+                <viewController id="cch-Ys-MF6" customClass="ProfileViewController" customModule="RhythmBreath" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DSY-e0-Eud">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2bO-TF-jm2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ceL-ht-svK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXF-Pq-eaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="-652"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ER5-PN-s0Y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cMc-2w-8kB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yb1-hG-lcn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zuO-Kz-9RK" kind="relationship" relationship="rootViewController" id="TCC-f6-bNW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dE9-KL-PEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46.376811594202906" y="98.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
